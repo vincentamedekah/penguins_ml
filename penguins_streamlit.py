@@ -12,8 +12,13 @@ st.write("This app uses 6 inputs to predict the species of penguin using "
          "a model built on the Palmer Penguins dataset. Use the form below"
          " to get started!")
 file_path = path.abspath(__file__) 
-dir_path = path.dirname(file_path) 
-penguins_file_path = path.join(dir_path,'penguins.csv')
+dir_path = path.dirname(file_path)
+password_guess = st.text_input('What is the Password?')
+if password_guess != st.secrets['password']:
+  st.stop()
+penguins_file_path = st.file_uploader('Upload your own penguin data')
+if penguins_file_path is None:
+   penguins_file_path = path.join(dir_path,'penguins.csv')
 model_file_path = path.join(dir_path,'random_forest_penguin.pickle')
 output_file_path = path.join(dir_path,'output_penguin.pickle')
 feature_importance_path = path.join(dir_path, 'feature_importance.png')

@@ -7,11 +7,10 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-st.title('Penguin Classifier')
-st.write("This app uses 6 inputs to predict the species of penguin using"
+st.title('Penguin Classifier: A Machine Learning App')
+st.write("This app uses 6 inputs to predict the species of penguin using "
          "a model built on the Palmer Penguins dataset. Use the form below"
          " to get started!")
-
 file_path = path.abspath(__file__) 
 dir_path = path.dirname(file_path) 
 penguins_file_path = path.join(dir_path,'penguins.csv')
